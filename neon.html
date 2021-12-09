@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chech neon</title>
+	<style type="text/css">
+		#mainContainer {
+                          width: 100%;
+                          height: 100vh;
+                          background: #0b0c10;
+                          
+		               }
+		h2{ 
+			color: #45a29e;
+            font-size: 3rem;
+			text-align: center;
+            font-weight: 900;
+		  }
+
+		#menuBar{
+                   width: 100%;
+                   height: 7vh;
+                   font-size: 2rem;
+                   margin-left: 30px;
+		        }
+		 #menu,#link{
+		 	     width: 25%;
+		 	     height: 6vh;
+		 	     color: #c5c6c7;
+                 float: left;
+                 text-decoration: none;
+		      }
+		 #link:hover{
+                   color: #45a29e;
+                   font-size: 2.5rem;  
+		        }
+
+		#content {
+                    width: 100%;
+                    height: 60vh;
+                    color: #65ccbb;
+                    font-size: 1.5rem;
+                    float: center;
+                    text-align: center;
+                    background: #0b0c10;
+                    text-shadow: 1px 2px 2px gray; 
+		         }
+		         
+		a{
+		 	     width: 25%;
+		 	     height: 6vh;
+		 	     color: #c5c6c7;
+                 text-decoration: none;
+		      }
+
+		a:hover{
+                   color: #45a29e;
+                   font-size: 2.5rem;  
+		        }
+		  h1,p{color: white; font-size: 1.5rem;}
+
+
+		  #spanResult { width: 33%; height: 200px; background: lightblue; color: black;  font-size: 1.5rem; margin-left: 35%;}
+		  #spanResult1 { width: 33%; height: 200px; background: lightblue; color: black;  font-size: 1.5rem; margin-left: 35%;}
+		#textONE { border-width: 33%; height: 30px; background: lightcyan; text-align: center; }
+		#textTWO { border-width: 33%; height: 30px; background: lightcyan;  text-align: center;}
+		.onc { width: 120px; height: 25px; background: green; color: white;  }
+
+	</style>
+</head>
+<body>
+
+<div id="mainContainer">
+
+<h2>GeekyBlogger</h2>
+<hr>
+
+<div id="menuBar">
+	<div id="menu"><a id="link" href="./index.html">Home</a></div>
+	<div id="menu"><a id="link" href="./careers.html">Careers</a></div>
+	<div id="menu"><a id="link" href="./aboutus.html">About</a></div>
+	<div id="menu"><a id="link" href="">Contact</a></div>
+</div>
+<hr>
+<div id="content">
+
+
+  <label>Chech neon number</label><br><br>
+  <input type="text" id="textONE" placeholder="Enter a number" /><br><br>
+  <button class="onc" onclick="checkNeon()">Submit</button><br><br>
+  <div id="spanResult">
+
+
+</div>
+
+
+       
+       
+</div>
+
+
+</div>
+
+<script type="text/javascript">
+	
+function checkNeon(){
+   /*var n=9;
+   //var square=0;
+   var sum=0;
+   //n=document.getElementById("textONE").value;
+   
+		//create object of scanner.
+		//Scanner sc = new Scanner(System.in);
+
+		//you have to enter number here.
+		//System.out.print("Enter the number: " );
+		//n=sc.nextInt();
+
+		//calculate square.
+		sq=(n*n);
+
+		while(sq!=0)
+		{
+			var d = sq%10;
+            sum = sum + d;
+            sq = sq / 10;
+			//sum=(sum+(n%10));
+			//n=(n/10);
+		}
+		//condition for checking sum is equal or not.
+		if(sum==n){
+			//document.getElementById("spanResult").textContent="It is a neon number";
+		console.log("Neon");}
+		else{
+			//document.getElementById("spanResult").textContent="It is not a neon number";
+		console.log("not neon");}*/
+		var x=document.getElementById("textONE").value;
+        let sq = x * x;
+        let sum = 0;
+        while (sq != 0) {
+            sum = sum + sq % 10;
+            sq = Math.floor(sq / 10);
+        }
+        //return (sum == x);
+        if(sum==x){
+        console.log("neon");
+    document.getElementById("spanResult").textContent="It is a neon number";
+}
+    else{
+    	console.log("not neon");
+    document.getElementById("spanResult").textContent="It is not a neon number";
+}
+}
+		
+
+	</script>
+</body>
+</html>
