@@ -84,9 +84,10 @@
 <div id="content">
 
 
-  <label>Chech neon number</label><br><br>
-  <input type="text" id="textONE" placeholder="Enter a number" /><br><br>
-  <button class="onc" onclick="checkNeon()">Submit</button><br><br>
+  <label>Generate pattern</label><br><br>
+  <input type="text" id="textONE" placeholder="Enter no. of rows" /><br><br>
+  <button class="onc" onclick="pattern()">Submit</button><br><br>
+  <button class="onc" onclick="changeColor()">Change Color</button><br><br>
   <div id="spanResult">
 
 
@@ -102,25 +103,29 @@
 
 <script type="text/javascript">
 	
-function checkNeon(){
-   
-		var x=document.getElementById("textONE").value;
-        let sq = x * x;
-        let sum = 0;
-        while (sq != 0) {
-            sum = sum + sq % 10;
-            sq = Math.floor(sq / 10);
-        }
-        //return (sum == x);
-        if(sum==x){
-        console.log("neon");
-    document.getElementById("spanResult").textContent="It is a neon number";
+
+var str1;
+function pattern(){
+	let n =document.getElementById("textONE").value;
+let string = "";
+for (let i = 1; i <= n; i++) {
+  for (let j = 0; j < i; j++) {
+    string += "*";
+  }
+  string += "\n";
 }
-    else{
-    	console.log("not neon");
-    document.getElementById("spanResult").textContent="It is not a neon number";
+console.log(string);
+document.getElementById("spanResult").textContent=string;
+str1=string;
 }
-}
+function changeColor(){
+	//document.getElementById("textONE").style.color = 'blue';
+	var str = new String(str1);
+    document.write(str.fontcolor( "blue" ));
+         //str.fontcolor( "blue" );
+         //document.getElementById("spanResult").textContent=str;
+	}
+
 		
 
 	</script>
