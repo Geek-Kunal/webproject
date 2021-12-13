@@ -59,8 +59,8 @@
 		  h1,p{color: white; font-size: 1.5rem;}
 
 
-		  #spanResult { width: 33%; height: 200px; background: lightblue; color: black;  font-size: 1.5rem; margin-left: 35%;}
-		  #spanResult1 { width: 33%; height: 200px; background: lightblue; color: black;  font-size: 1.5rem; margin-left: 35%;}
+		  #spanResult { width: 200px; height: 100px; background: lightblue; color: black;  font-size: 1.5rem; margin-left: 40%;}
+		  #spanResult1 { width: 200px; height: 100px; background: lightblue; color: black;  font-size: 1.5rem; margin-left: 40%;}
 		#textONE { border-width: 33%; height: 30px; background: lightcyan; text-align: center; }
 		#textTWO { border-width: 33%; height: 30px; background: lightcyan;  text-align: center;}
 		.onc { width: 120px; height: 25px; background: green; color: white;  }
@@ -106,28 +106,31 @@
 
 var str1;
 function pattern(){
-	let n =document.getElementById("textONE").value;
-let string = "";
-for (let i = 1; i <= n; i++) {
-  for (let j = 0; j < i; j++) {
-    string += "*";
-  }
-  string += "\n";
-}
-console.log(string);
-document.getElementById("spanResult").textContent=string;
-str1=string;
-}
+	                let n =document.getElementById("textONE").value;
+                    let string = "";
+                           for (let i = 1; i <= n; i++) {
+                                for (let j = 0; j < i; j++) {
+                                      string += "*";
+                                      //var string1="\n"+string;
+                                }
+                               string += "\n"; 
+                             }
+                    console.log(string);
+                    document.getElementById("spanResult").textContent="\n"+string;
+                    str1=string;
+                  }
+
+
 function changeColor(){
-	//document.getElementById("textONE").style.color = 'blue';
-	var str = new String(str1);
-    document.write(str.fontcolor( "blue" ));
-         //str.fontcolor( "blue" );
-         //document.getElementById("spanResult").textContent=str;
+	                    //document.getElementById("textONE").style.color = 'blue';
+	                    var str = new String(str1);
+                        document.write(str.fontcolor( "blue" ));
+                        //str.fontcolor( "blue" );
+                       // document.getElementById("spanResult").textContent=str;
 	}
 
 		
 
-	</script>
+</script>
 </body>
 </html>
