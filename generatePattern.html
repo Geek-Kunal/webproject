@@ -87,6 +87,8 @@
   <label>Generate pattern</label><br><br>
   <input type="text" id="textONE" placeholder="Enter no. of rows" /><br><br>
   <button class="onc" onclick="pattern()">Submit</button><br><br>
+  <label for="favcolor">Select your favorite color:</label>
+  <input type="color" id="favcolor" name="favcolor" value="#ff0000"><br><br>
   <button class="onc" onclick="changeColor()">Change Color</button><br><br>
   <div id="spanResult">
 
@@ -115,18 +117,17 @@ function pattern(){
                                 }
                                string += "\n"; 
                              }
-                    console.log(string);
-                    document.getElementById("spanResult").textContent="\n"+string;
-                    str1=string;
+                   // console.log(string);
+                    document.getElementById("spanResult").innerText=string;
+                    //str1=string;
                   }
 
 
 function changeColor(){
-	                    //document.getElementById("textONE").style.color = 'blue';
-	                    var str = new String(str1);
-                        document.write(str.fontcolor( "blue" ));
-                        //str.fontcolor( "blue" );
-                       // document.getElementById("spanResult").textContent=str;
+	                    
+	                    var clr=document.getElementById("favcolor").value;
+	                    document.getElementById("spanResult").style.color = clr;
+                        
 	}
 
 		
