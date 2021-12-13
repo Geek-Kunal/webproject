@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Homepage</title>
+	<title>Contact Us</title>
 	<style type="text/css">
 		#mainContainer {
                           width: 100%;
@@ -22,63 +22,99 @@
                    font-size: 2rem;
                    margin-left: 30px;
 		        }
-		 div,a{
+		 #menu,#link,#link1{
 		 	     width: 25%;
 		 	     height: 6vh;
 		 	     color: #c5c6c7;
                  float: left;
                  text-decoration: none;
 		      }
-		 a:hover{
+		 #link,#link1:hover{
                    color: #45a29e;
                    font-size: 2.5rem;  
 		        }
 
 		#content {
                     width: 100%;
-                    height: 60vh;
-                    color: white;
-                    font: 1.5rem;
+                    height: 100vh;
+                    color: #65ccbb;
+                    font-size: 1.5rem;
+                    float: center;
                     text-align: center;
+                    background: #0b0c10;
+                    text-shadow: 1px 2px 2px gray; 
 		         }
+		         
+		a{
+		 	     width: 25%;
+		 	     height: 6vh;
+		 	     color: #c5c6c7;
+                 text-decoration: none;
+		      }
 
-		#imgLoader{
-                     width: 100%;
-                     height: 30vh;
-                     
-		          }
-		#cent {
-                   text-align: center;
-                   margin-left: 40%;
-	       	   }
+		a:hover{
+                   color: #45a29e;
+                   font-size: 2.5rem;  
+		        }
+		  h1,p{color: white; font-size: 1.5rem;}
+
+
+		  #spanResult { width: 33%; height: 200px; background: lightblue; color: black;  font-size: 1.5rem; margin-left: 35%;}
+		  #spanResult1 { width: 33%; height: 200px; background: lightblue; color: black;  font-size: 1.5rem; margin-left: 35%;}
+		#email { border-width: 33%; height: 30px; background: lightcyan; text-align: center; }
+		#pass { border-width: 33%; height: 30px; background: lightcyan;  text-align: center;}
+		#onc { width: 120px; height: 25px; background: green; color: white; }
 
 	</style>
 </head>
 <body>
-
 <div id="mainContainer">
 
 <h2>GeekyBlogger</h2>
 <hr>
 
-<div id="menuBar">
-	<div><a href="">Home</a></div>
-	<div><a href="./careers.html">Careers</a></div>
-	<div><a href="./aboutus.html">About</a></div>
-	<div><a href="./contactus.html">Contact</a></div>
-</div>
-<hr>
 
 <div id="content">
-	<h1 style="font-size: 40px">Welcome</h1>
-	<p style="font-size: 25px">Explore the universe and help us to find the solution for your problems.</p>
-	<a id="cent" href="./program.html">Click here</a>
-	<br>
-	<br>
-	<img src="https://i.imgur.com/g5SNIGZ.png" width="100%" height="500px" />
+
+
+  <label>Login</label><br><br>
+<input type="text" id="email" placeholder="Enter email id"  /><br><br>
+<input type="password" id="pass" placeholder="Enter password" /><br><br>
+<input type="submit" id="onc" onclick="testVariable()"><br/><br/>
+
+
 
 </div>
 
+
 </div>
+
+<script type="text/javascript">
+		function testVariable()
+		{
+			let username="kunal5@gmail.com";
+			let password="Kunal@25";
+			let strText=document.getElementById("email").value;
+			let strText1=document.getElementById("pass").value;
+	
+			let pattern =/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/; 
+
+			let passPattern=/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+			
+			if(strText=="" || strText1=="")
+				alert("Fill the required field");
+			else if(strText!=username || strText1!=password)
+				alert("Input mismatch ! Try again");
+			else if(username==strText.match(pattern) & password==strText1.match(passPattern))
+				console.log(username);
+			    console.log(strText);
+			    console.log(password);
+			    console.log(strText1);
+			   window.location="./index1.html";
+				
+		}
+
+		
+	</script>
 </body>
 </html>

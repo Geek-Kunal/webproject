@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>About Us</title>
+	<title>Homepage</title>
 	<style type="text/css">
 		#mainContainer {
                           width: 100%;
@@ -22,14 +22,14 @@
                    font-size: 2rem;
                    margin-left: 30px;
 		        }
-		 #menu,#link{
+		 div,a{
 		 	     width: 25%;
 		 	     height: 6vh;
 		 	     color: #c5c6c7;
                  float: left;
                  text-decoration: none;
 		      }
-		 #link:hover{
+		 a:hover{
                    color: #45a29e;
                    font-size: 2.5rem;  
 		        }
@@ -37,26 +37,20 @@
 		#content {
                     width: 100%;
                     height: 60vh;
-                    color: #65ccbb;
-                    font-size: 1.5rem;
-                    float: center;
+                    color: white;
+                    font: 1.5rem;
                     text-align: center;
-                    background: #0b0c10;
-                    text-shadow: 1px 2px 2px gray; 
 		         }
-		         
-		a{
-		 	     width: 25%;
-		 	     height: 6vh;
-		 	     color: #c5c6c7;
-                 text-decoration: none;
-		      }
 
-		a:hover{
-                   color: #45a29e;
-                   font-size: 2.5rem;  
-		        }
-		  h1,p{color: white; font-size: 1.5rem;}
+		#imgLoader{
+                     width: 100%;
+                     height: 30vh;
+                     
+		          }
+		#cent {
+                   text-align: center;
+                   margin-left: 40%;
+	       	   }
 
 	</style>
 </head>
@@ -68,18 +62,23 @@
 <hr>
 
 <div id="menuBar">
-	<div id="menu"><a id="link" href="./homepage.html">Home</a></div>
-	<div id="menu"><a id="link" href="./careers.html">Careers</a></div>
-	<div id="menu"><a id="link" href="#">About</a></div>
-	<div id="menu"><a id="link" href="./contactus.html">Contact</a></div>
+	<div><a href="#">Home</a></div>
+	<div><a href="./careers.html">Careers</a></div>
+	<div><a href="./aboutus.html">About</a></div>
+	<div><a href="./contactus.html">Contact</a></div>
 </div>
 <hr>
-<div id="content">
-  <h3>This is a website builder company. Here we are providing solution to cusomer's problem in an efficient manner and try to make things creative as well as useful.</h3>     
-       
-       
-</div>
 
+<div id="content">
+	<h1 style="font-size: 40px">Welcome</h1>
+	<p style="font-size: 25px">Explore the universe and help us to find the solution for your problems.</p>
+	<a id="cent" href="./task.html">HomeWork</a>
+	<a id="cent" href="./program.html">Click here</a>
+	<br>
+	<br>
+	<img src="https://i.imgur.com/g5SNIGZ.png" width="100%" height="500px" />
+
+</div>
 
 </div>
 </body>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Chech neon</title>
+	<title>Contact Us</title>
 	<style type="text/css">
 		#mainContainer {
                           width: 100%;
@@ -22,21 +22,21 @@
                    font-size: 2rem;
                    margin-left: 30px;
 		        }
-		 #menu,#link{
+		 #menu,#link,#link1{
 		 	     width: 25%;
 		 	     height: 6vh;
 		 	     color: #c5c6c7;
                  float: left;
                  text-decoration: none;
 		      }
-		 #link:hover{
+		 #link,#link1:hover{
                    color: #45a29e;
                    font-size: 2.5rem;  
 		        }
 
 		#content {
                     width: 100%;
-                    height: 60vh;
+                    height: 100vh;
                     color: #65ccbb;
                     font-size: 1.5rem;
                     float: center;
@@ -61,68 +61,60 @@
 
 		  #spanResult { width: 33%; height: 200px; background: lightblue; color: black;  font-size: 1.5rem; margin-left: 35%;}
 		  #spanResult1 { width: 33%; height: 200px; background: lightblue; color: black;  font-size: 1.5rem; margin-left: 35%;}
-		#textONE { border-width: 33%; height: 30px; background: lightcyan; text-align: center; }
-		#textTWO { border-width: 33%; height: 30px; background: lightcyan;  text-align: center;}
-		.onc { width: 120px; height: 25px; background: green; color: white;  }
+		#email { border-width: 33%; height: 30px; background: lightcyan; text-align: center; }
+		#pass { border-width: 33%; height: 30px; background: lightcyan;  text-align: center;}
+		#onc { width: 120px; height: 25px; background: green; color: white; }
 
 	</style>
 </head>
 <body>
-
 <div id="mainContainer">
 
 <h2>GeekyBlogger</h2>
 <hr>
 
-<div id="menuBar">
-	<div id="menu"><a id="link" href="./homepage.html">Home</a></div>
-	<div id="menu"><a id="link" href="./careers.html">Careers</a></div>
-	<div id="menu"><a id="link" href="./aboutus.html">About</a></div>
-	<div id="menu"><a id="link" href="./contactus.html">Contact</a></div>
-</div>
-<hr>
+
 <div id="content">
 
 
-  <label>Chech neon number</label><br><br>
-  <input type="text" id="textONE" placeholder="Enter a number" /><br><br>
-  <button class="onc" onclick="checkNeon()">Submit</button><br><br>
-  <div id="spanResult">
+  <label>Login</label><br><br>
+<input type="text" id="email" placeholder="Enter email id"  /><br><br>
+<input type="password" id="pass" placeholder="Enter password" /><br><br>
+<input type="submit" id="onc" onclick="testVariable()"><br/><br/>
 
 
-</div>
 
-
-       
-       
 </div>
 
 
 </div>
 
 <script type="text/javascript">
+		function testVariable()
+		{
+			let username="kunal5@gmail.com";
+			let password="Kunal@25";
+			let strText=document.getElementById("email").value;
+			let strText1=document.getElementById("pass").value;
 	
-function checkNeon(){
-   
-		var x=document.getElementById("textONE").value;
-        let sq = x * x;
-        let sum = 0;
-        while (sq != 0) {
-            sum = sum + sq % 10;
-            sq = Math.floor(sq / 10);
-        }
-        //return (sum == x);
-        if(sum==x){
-        console.log("neon");
-    document.getElementById("spanResult").textContent="It is a neon number";
-}
-    else{
-    	console.log("not neon");
-    document.getElementById("spanResult").textContent="It is not a neon number";
-}
-}
-		
+			let pattern =/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/; 
 
+			let passPattern=/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+			
+			if(strText=="" || strText1=="")
+				alert("Fill the required field");
+			else if(strText!=username || strText1!=password)
+				alert("Input mismatch ! Try again");
+			else if(username==strText.match(pattern) & password==strText1.match(passPattern))
+				console.log(username);
+			    console.log(strText);
+			    console.log(password);
+			    console.log(strText1);
+			   window.location="./index.html";
+				
+		}
+
+		
 	</script>
 </body>
 </html>
