@@ -97,20 +97,23 @@
 			let strText=document.getElementById("email").value;
 			let strText1=document.getElementById("pass").value;
 	
-			let pattern =/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/; 
+			//let pattern =/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/; 
 
-			let passPattern=/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+			//let passPattern=/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+			
+			console.log(username);
+			    console.log(strText);
+			    console.log(password);
+			    console.log(strText1);
+			    
 			
 			if(strText=="" || strText1=="")
 				alert("Fill the required field");
 			else if(strText!=username || strText1!=password)
 				alert("Input mismatch ! Try again");
-			else if(username==strText.match(pattern) & password==strText1.match(passPattern))
-				console.log(username);
-			    console.log(strText);
-			    console.log(password);
-			    console.log(strText1);
+			else if(username==strText & password==strText1){
 			   window.location="./homepage.html";
+			}
 				
 		}
 
