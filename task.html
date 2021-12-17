@@ -72,12 +72,18 @@
 
 <h2>GeekyBlogger</h2>
 <hr>
-
+<div id="menuBar">
+	<div id="menu"><a id="link" href="./homepage.html">Home</a></div>
+	<div id="menu"><a id="link" href="./careers.html">Careers</a></div>
+	<div id="menu"><a id="link" href="./aboutus.html">About</a></div>
+	<div id="menu"><a id="link" href="./contactus.html">Contact</a></div>
+</div>
+<hr>
 
 <div id="content">
 
 
-  <label>Login</label><br><br>
+  <label>Sign Up</label><br><br>
 <input type="text" id="email" placeholder="Enter email id"  /><br><br>
 <input type="password" id="pass" placeholder="Enter password" /><br><br>
 <input type="submit" id="onc" onclick="testVariable()"><br/><br/>
@@ -92,26 +98,23 @@
 <script type="text/javascript">
 		function testVariable()
 		{
-			let username="kunal5@gmail.com";
-			let password="Kunal@25";
 			let strText=document.getElementById("email").value;
 			let strText1=document.getElementById("pass").value;
 	
 			let pattern =/\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/; 
 
+
 			let passPattern=/^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+
+			if(pattern.test(strText) & passPattern.test(strText1))
+			{
+				alert("Successfully Submitted !");
+				return true;
+			}
+			else{
+				alert("Please input valid data");
+			}		
 			
-			if(strText=="" || strText1=="")
-				alert("Fill the required field");
-			else if(strText!=username || strText1!=password)
-				alert("Input mismatch ! Try again");
-			else if(username==strText.match(pattern) & password==strText1.match(passPattern))
-				console.log(username);
-			    console.log(strText);
-			    console.log(password);
-			    console.log(strText1);
-			   window.location="./index.html";
-				
 		}
 
 		
